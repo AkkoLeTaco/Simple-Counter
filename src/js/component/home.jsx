@@ -1,24 +1,27 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useState, useEffect } from "react";
+import Time from "./time.jsx";
 
 //create your first component
 const Home = () => {
+	let side = {
+		marginRight: "20px",
+	};
 	return (
-		<div>
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="card bg-dark text-light">
+			<div className="card-body">
+				<span>
+					<h1>
+						<i
+							style={side}
+							className="fa fa-clock"
+							aria-hidden="true"></i>
+						<Time count={1000} />
+						<Time count={100} />
+						<Time count={10} />
+						<Time count={1} />
+					</h1>
+				</span>
+			</div>
 		</div>
 	);
 };
